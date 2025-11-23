@@ -35,7 +35,7 @@ jobs:
           if [ "${{ github.ref_type }}" == "tag" ]; then
             echo "tags=ghcr.io/${{ github.repository }}:latest,ghcr.io/${{ github.repository }}:${{ github.ref_name }}" >> $GITHUB_OUTPUT
           else
-            echo "tags=ghcr.io/${{ github.repository }}:develop" >> $GITHUB_OUTPUT
+            echo "tags=ghcr.io/${{ github.repository }}:edge" >> $GITHUB_OUTPUT
           fi
 
       - name: Build and push
