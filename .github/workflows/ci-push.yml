@@ -33,7 +33,14 @@ jobs:
         id: meta
         run: |
           if [ "${{ github.ref_type }}" == "tag" ]; then
-            echo "tags=ghcr.io/${{ github.repository }}:latest,ghcr.io/${{ github.repository }}:${{ github.ref_name }}" >> $GITHUB_OUTPUT
+            VERSION="${{ github.ref_name }}"
+            MAJOR_MINOR=$(echo "$VERSION" | cut -d. -f1,2)
+            MAJOR_MINOR_PATCH=$(echo "$VERSION" | cut -d- -f1)
+      
+            echo "tags=ghcr.io/${{ github.repository }}:latest,\
+              ghcr.io/${{ github.repository }}:${VERSION},\
+              ghcr.io/${{ github.repository }}:${MAJOR_MINOR},\
+              ghcr.io/${{ github.repository }}:${MAJOR_MINOR_PATCH}" >> $GITHUB_OUTPUT
           else
             echo "tags=ghcr.io/${{ github.repository }}:edge" >> $GITHUB_OUTPUT
           fi
