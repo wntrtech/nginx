@@ -14,7 +14,7 @@ RUN cp /usr/share/zoneinfo/${DEFAULT_TZ} /etc/localtime && \
     chown -R nginx:nginx /etc/nginx/ && \
     chown -R nginx:nginx /usr/share/nginx/html/ && \
     apk add --no-cache \
-      libpng=1.6.55-r0
+      libpng=1.6.55-r0 zlib=1.3.2-r0
 USER nginx:nginx
 
 EXPOSE 8080
