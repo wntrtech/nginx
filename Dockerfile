@@ -1,4 +1,4 @@
-FROM nginx:1.29.5-alpine
+FROM nginx:1.29.6-alpine
 
 ARG TZ='Europe/Riga'
 ENV DEFAULT_TZ=${TZ} \
@@ -12,9 +12,8 @@ RUN cp /usr/share/zoneinfo/${DEFAULT_TZ} /etc/localtime && \
     chown -R nginx:nginx /var/cache/nginx && \
     chown -R nginx:nginx /var/run/ && \
     chown -R nginx:nginx /etc/nginx/ && \
-    chown -R nginx:nginx /usr/share/nginx/html/ && \
-    apk add --no-cache \
-      libpng=1.6.55-r0 zlib=1.3.2-r0 libexpat=2.7.5-r0
+    chown -R nginx:nginx /usr/share/nginx/html/
+
 USER nginx:nginx
 
 EXPOSE 8080
