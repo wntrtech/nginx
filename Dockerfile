@@ -12,7 +12,13 @@ RUN cp /usr/share/zoneinfo/${DEFAULT_TZ} /etc/localtime && \
     chown -R nginx:nginx /var/cache/nginx && \
     chown -R nginx:nginx /var/run/ && \
     chown -R nginx:nginx /etc/nginx/ && \
-    chown -R nginx:nginx /usr/share/nginx/html/  
+    chown -R nginx:nginx /usr/share/nginx/html/  && \
+    apk add --no-cache \
+      libcrypto3=3.5.6-r0 \
+      libpng=1.6.57-r0 \
+      libssl3=3.5.6-r0 \
+      musl=1.2.5-r23 \
+      musl-utils=1.2.5-r23
       
 USER nginx:nginx
 
