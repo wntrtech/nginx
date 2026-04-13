@@ -19,6 +19,8 @@ RUN cp /usr/share/zoneinfo/${DEFAULT_TZ} /etc/localtime && \
       libssl3=3.5.6-r0 \
       musl=1.2.5-r23 \
       musl-utils=1.2.5-r23
+      libuuid=2.41.4-r0 \
+      zlib=1.3.2-r0
       
 USER nginx:nginx
 
