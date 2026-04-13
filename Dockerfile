@@ -12,7 +12,7 @@ RUN cp /usr/share/zoneinfo/${DEFAULT_TZ} /etc/localtime && \
     chown -R nginx:nginx /var/cache/nginx && \
     chown -R nginx:nginx /var/run/ && \
     chown -R nginx:nginx /etc/nginx/ && \
-    chown -R nginx:nginx /usr/share/nginx/html/ && 
+    chown -R nginx:nginx /usr/share/nginx/html/  
       
 USER nginx:nginx
 
