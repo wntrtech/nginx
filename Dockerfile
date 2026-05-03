@@ -16,9 +16,8 @@ RUN cp /usr/share/zoneinfo/${DEFAULT_TZ} /etc/localtime && \
     apk add --no-cache \
       libcrypto3=3.5.6-r0 \
       libssl3=3.5.6-r0 \
-      musl=1.2.6-r2 \
-      musl-utils=1.2.6-r2 \
-      curl=8.20.0-r0 \
+      musl=1.2.5-r23 \
+      musl-utils=1.2.5-r23 \
       nghttp2=1.69.0-r0 \
       zlib=1.3.2-r0
       
