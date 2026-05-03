@@ -19,6 +19,7 @@ RUN cp /usr/share/zoneinfo/${DEFAULT_TZ} /etc/localtime && \
       musl=1.2.5-r23 \
       musl-utils=1.2.5-r23 \
       nghttp2=1.69.0-r0 \
+      nghttp2-libs=1.69.0-r0 \
       zlib=1.3.2-r0
       
 USER nginx:nginx
