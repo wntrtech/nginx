@@ -1,4 +1,4 @@
-FROM nginx:1.29.8-alpine
+FROM nginx:1.30.0-alpine
 
 ARG TZ='Europe/Riga'
 ENV DEFAULT_TZ=${TZ} \
@@ -15,11 +15,13 @@ RUN cp /usr/share/zoneinfo/${DEFAULT_TZ} /etc/localtime && \
     chown -R nginx:nginx /usr/share/nginx/html/  && \
     apk add --no-cache \
       libcrypto3=3.5.6-r0 \
-      libpng=1.6.57-r0 \
       libssl3=3.5.6-r0 \
       musl=1.2.5-r23 \
       musl-utils=1.2.5-r23 \
-      libuuid=2.41.4-r0 \
+      nghttp2=1.69.0-r0 \
+      nghttp2-libs=1.69.0-r0 \
+      libxpm=3.5.19-r0 \
+      xz-libs=5.8.3-r0 \
       zlib=1.3.2-r0
       
 USER nginx:nginx
