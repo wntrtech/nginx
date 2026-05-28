@@ -6,6 +6,8 @@ ENV DEFAULT_TZ=${TZ} \
     LANG=lv_LV.UTF-8
 
 COPY --chown=nginx:nginx 99_usermode.sh /docker-entrypoint.d/
+COPY --chown=nginx:nginx snippets/ /etc/nginx/snippets/
+COPY --chown=nginx:nginx default.conf /etc/nginx/conf.d/default.conf
 
 RUN cp /usr/share/zoneinfo/${DEFAULT_TZ} /etc/localtime && \
     chmod +x /docker-entrypoint.d/99_usermode.sh && \
@@ -28,4 +30,4 @@ USER nginx:nginx
 
 EXPOSE 8080
 
-HEALTHCHECK --start-period=20s --start-interval=5s --interval=1m --timeout=10s --retries=5 CMD curl --fail -s http://localhost:8080 || exit 1
+HEALTHCHECK --start-period=20s --start-interval=5s --interval=1m --timeout=10s --retries=5 CMD curl --fail -s http://127.0.0.1:8080/healthz || exit 1
