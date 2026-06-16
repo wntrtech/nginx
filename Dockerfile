@@ -16,8 +16,8 @@ RUN cp /usr/share/zoneinfo/${DEFAULT_TZ} /etc/localtime && \
     chown -R nginx:nginx /etc/nginx/ && \
     chown -R nginx:nginx /usr/share/nginx/html/  && \
     apk add --no-cache \
-      libcrypto3=3.5.6-r0 \
-      libssl3=3.5.6-r0 \
+      libcrypto3=3.5.7-r0 \
+      libssl3=3.5.7-r0 \
       musl=1.2.5-r23 \
       musl-utils=1.2.5-r23 \
       nghttp2=1.69.0-r0 \
