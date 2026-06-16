@@ -22,6 +22,7 @@ RUN cp /usr/share/zoneinfo/${DEFAULT_TZ} /etc/localtime && \
       musl-utils=1.2.5-r23 \
       nghttp2=1.69.0-r0 \
       nghttp2-libs=1.69.0-r0 \
+      libxml2=2.13.9-r1 \
       libxpm=3.5.19-r0 \
       xz-libs=5.8.3-r0 \
       zlib=1.3.2-r0
