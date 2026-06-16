@@ -10,7 +10,8 @@ Nginx server for static resources
   `/usr/share/nginx/html`, with `server_tokens off`, `http2 on`, and
   `/healthz` included.
 - `/etc/nginx/snippets/healthz.conf` — reusable `location = /healthz`
-  snippet (`access_log off`, returns `200 "healthy"`).
+  snippet (`access_log off`, returns `200 {"status":"pass"}` as
+  `application/json`).
 - `HEALTHCHECK` — `curl --fail http://127.0.0.1:8080/healthz`.
 - Entrypoint script `99_usermode.sh` — rewrites `:80` → `:8080` in any
   `default.conf` that still uses port 80 and removes `user nginx;` from
