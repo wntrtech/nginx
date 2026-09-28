@@ -1,4 +1,4 @@
-FROM nginx:1.31.5-alpine
+FROM nginx:1.31.6-alpine
 
 ARG TZ='Europe/Riga'
 ENV DEFAULT_TZ=${TZ} \
