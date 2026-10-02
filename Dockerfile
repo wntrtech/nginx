@@ -17,8 +17,8 @@ RUN cp /usr/share/zoneinfo/${DEFAULT_TZ} /etc/localtime && \
     chown -R nginx:nginx /usr/share/nginx/html/  && \
     apk upgrade --no-cache
 
-USER nginx:nginx
+USER 101:101
 
 EXPOSE 8080
 
-HEALTHCHECK --start-period=90s --start-interval=2s --interval=30s --timeout=3s --retries=3 CMD curl --fail -s http://127.0.0.1:8080/healthz || exit 1
+HEALTHCHECK --start-period=90s --start-interval=2s --interval=30s --timeout=3s --retries=3 CMD ["/bin/sh", "-c", "curl --fail -s http://127.0.0.1:8080/healthz || exit 1"]

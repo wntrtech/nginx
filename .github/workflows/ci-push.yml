@@ -54,5 +54,6 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm64
           tags: ${{ steps.meta.outputs.tags }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          # Always rebuild from scratch so `apk upgrade` pulls current Alpine security
+          # fixes; a cached layer would republish the previous packages.
+          no-cache: true
