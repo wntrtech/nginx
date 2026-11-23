@@ -15,7 +15,7 @@ RUN cp /usr/share/zoneinfo/${DEFAULT_TZ} /etc/localtime && \
     chown -R nginx:nginx /var/run/ && \
     chown -R nginx:nginx /etc/nginx/ && \
     chown -R nginx:nginx /usr/share/nginx/html/  && \
-    apk update && apk upgrade --no-cache && apk add zlib
+    apk update && apk upgrade --no-cache && apk add zlib libxml2
 
 USER 101:101
 
